@@ -1,0 +1,79 @@
+p:first-letter {
+	text-transform: uppercase;
+}
+
+li:first-letter {
+	text-transform: uppercase;
+}
+
+h1:first-letter {
+	text-transform: uppercase;
+}
+
+.publish {
+	margin-left: 20px;
+}
+
+.write_post {
+	margin-left: 800px;
+	margin-top: 15px;
+}
+
+.decale {
+	margin-left: 7px;
+}
+
+.style_input {
+	border-left-style: solid;
+	height: 400px;
+}
+
+.input_author {
+	margin-left: 18px;
+}
+
+.input_title {
+	margin-left: 31px;
+}
+
+.input_essay {
+	margin-left: 5px;
+	width: 210px;
+	height: 230px;
+	text
+}
+
+.a_droite {
+	float: right;
+}
+
+.style_sommaire {
+	border-left-style: solid;
+	border-bottom-style: solid;
+	border-top-style: solid;
+}
+
+.titre_sommaire {
+	text-align: center;
+	font-weight: bold;
+}
+
+.reduit {
+	font-size: 75%;
+}
+
+.marge {
+	margin-top: 20px;
+}
+
+.post_body {
+	margin-top: 20px;
+	text-align: justify;
+}
+
+.post_author {
+	color: red;
+	font-weight: bold;
+	font-style: italic;
+	margin-top: 5px;
+}
