@@ -1,8 +1,6 @@
 
 // Blog
 
-// Probleme avec les commentaires qui ne s'insèrent pas dans le bloc hero-unit de l'article
-
 import stdlib.themes.bootstrap
 import stdlib.web.client
 
