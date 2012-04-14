@@ -24,45 +24,66 @@ function update_sidelist(string titre, dom fenetre) {
 
 function make_comment(string discussion) {
 
-			author_ = Client.prompt("Auteur", "Commentator");
-			author = (author_ ? "Commentateur");
-			text_ = Client.prompt("Commentaire", "Comment");
-			text = (text_ ? "Commentaire");
+	author = Dom.get_value(#comm_authinput);
+	text = Dom.get_value(#comm_continput);
+
+	if (author == "") {
+		Client.alert("Mets ton nom avant de commenter !")
+	}
+	else {
+		if (text == "") {
+			Client.alert("Ecris un commentaire avant d'envoyer !")
+		}
+		else {
 			commentaire = ~{discussion, author, text};
-
 			Network.broadcast(commentaire, comments);
+			Dom.clear_value(#comm_authinput);
+			Dom.clear_value(#comm_continput);
+		}
+	}
 }
-
 
 function add_comment(comment c) {
 
 	element_of_discussion =
-		<div>
-			<div class="marge">
-				<p class="reduit"> {c.text} </>
-				<b> De {c.author} </>
+		<div class="marge">
+			<div class="comm">
+				<p> {c.text} </>
+				<b> -- De {c.author} </>
+				<br />
+				<p />
 			</>
 		</>
 	;
 	#{c.discussion} =+ element_of_discussion;
 }
 
-
-
 function add_to_blog(post p) {
 
 	element_of_blog = 
 		<div class="marge"> 
 			<div class="hero-unit">
-				<h1> {p.title} </>
-				<p class="post_body"> {p.body} </>
-				<br />
-				<p class="post_author a_droite"> Posté par {p.author} </>
-				<br />
-				<br />
-				<div id=#{p.discussion} class="footer marge">
+				<div class="">
+					<h1> {p.title} </>
+					<p class="post_body"> {p.body} </>
+					<br />
+					<br />
+					<p class="post_author a_droite"> Posté par {p.author} </>
+					<br />
+					<br />
 				</>
-				<div class="btn btn-success a_droite" onclick = { function(_) { make_comment(p.discussion) } }> Add a comment </>
+				<div class="style_comms">
+					<br />
+					<div id=#{p.discussion} class="comms" />
+					<br />
+					<div class="reduit"> Ton nom
+						<input id=#comm_authinput class="ajuste_commauth" />
+					</>
+					<div class="reduit"> Ton commentaire
+						<textarea id=#comm_continput class="ajuste_commcont" />
+					</>
+				</>
+				<div class="btn btn-success a_droite" onclick = { function(_) { make_comment(p.discussion) } }> Send comment </>
 			</>
 		</>
 	;
@@ -142,7 +163,7 @@ function start() {
 Server.start(
 	Server.http,
     [ {resources: @static_resource_directory("resources")} ,
-    	{register: ["resources/essai3.css"]} ,
+    	{register: ["resources/opablog.css"]} ,
         {title: "Blog", page:start }
     ]
 )

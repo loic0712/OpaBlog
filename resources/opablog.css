@@ -10,13 +10,18 @@ h1:first-letter {
 	text-transform: uppercase;
 }
 
-.publish {
-	margin-left: 20px;
+.style_comms {
+	border-top-style: double;
+	margin-top: 20px;
 }
 
-.write_post {
-	margin-left: 800px;
-	margin-top: 15px;
+.comms {
+	margin-left: 565px;
+	text-align: right;
+}
+
+.publish {
+	margin-left: 20px;
 }
 
 .decale {
@@ -26,6 +31,7 @@ h1:first-letter {
 .style_input {
 	border-left-style: solid;
 	height: 400px;
+	margin-top: 10px;
 }
 
 .input_author {
@@ -40,11 +46,18 @@ h1:first-letter {
 	margin-left: 5px;
 	width: 210px;
 	height: 230px;
-	text
 }
 
 .a_droite {
 	float: right;
+}
+
+.ajuste_commauth {
+	margin-left: 46px;
+}
+
+.ajuste_commcont {
+	margin-left: 10px;
 }
 
 .style_sommaire {
@@ -59,11 +72,13 @@ h1:first-letter {
 }
 
 .reduit {
-	font-size: 75%;
+	font-size: 70%;
 }
 
-.marge {
-	margin-top: 20px;
+.comm {
+	border-bottom-style: dotted;
+	width: 300px;
+	text-align: justify;
 }
 
 .post_body {
